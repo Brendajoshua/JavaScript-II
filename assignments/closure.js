@@ -16,18 +16,25 @@ return school;
 
 
 // ==== Challenge 2: Implement a "counter maker" function ====
-const counterMaker = () => {
+
   // IMPLEMENTATION OF counterMaker:
   // 1- Declare a `count` variable with a value of 0. We will be mutating it, so declare it using `let`!
   // 2- Declare a function `counter`. It should increment and return `count`.
   //      NOTE: This `counter` function, being nested inside `counterMaker`,
   //      "closes over" the `count` variable. It can "see" it in the parent scope!
   // 3- Return the `counter` function.
-};
+
 // Example usage: const myCounter = counterMaker();
 // myCounter(); // 1
 // myCounter(); // 2
-
+const counterMaker = () => {
+  let count = 0;
+  counter = new count(() => {
+    count++;
+    console.log(count);
+  }, 100);
+  return counter;
+}
 // ==== Challenge 3: Make `counterMaker` more sophisticated ====
 // It should have a `limit` parameter. Any counters we make with `counterMaker`
 // will refuse to go over the limit, and start back at 1.
