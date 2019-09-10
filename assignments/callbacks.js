@@ -80,13 +80,8 @@ function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
-let uniqueArray = [];
-for (i = 0; i < array.length; i++){
-    if (uniqueArray.indexOf(array[i]) === -1){
-      uniqueArray.push(array[i]);
-    }
-}
-return (uniqueArray)
+  let duplicateFreeArray = array.filter((item, index) => array.indexOf(item) === index);
+  return cb(duplicateFreeArray);
 }
 
 let names = ["Brenda", "Hellen", "Brenda", "Joshua"];
